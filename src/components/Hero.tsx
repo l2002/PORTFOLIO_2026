@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Play, Sparkles, ArrowRight, CheckCircle2, Copy, Check, Download, ExternalLink } from 'lucide-react';
+import { ArrowDown, Check, Copy } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Hero() {
@@ -12,134 +12,176 @@ export default function Hero() {
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
+  const heroStats = [
+    {
+      value: '10K+',
+      line1: 'Từ khóa',
+      line2: 'nghiên cứu',
+    },
+    {
+      value: '200+',
+      line1: 'Outline bài',
+      line2: 'chuẩn SEO',
+    },
+    {
+      value: '03',
+      line1: 'Code · Linux',
+      line2: 'Phần cứng',
+    },
+  ];
+
   return (
-    <section className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 overflow-hidden">
-      {/* Background Ambient Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] glow-orb-1 rounded-full pointer-events-none blur-3xl opacity-70" />
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] glow-orb-2 rounded-full pointer-events-none blur-3xl opacity-60" />
-      <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] glow-orb-3 rounded-full pointer-events-none blur-3xl opacity-50" />
+    <section className="relative min-h-[92vh] flex flex-col justify-between pt-28 pb-12 px-4 sm:px-8 overflow-hidden bg-[#050811]">
+      {/* Cobalt Radial Atmosphere Behind Portrait */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[520px] bg-blue-700/20 rounded-full blur-[140px]" />
+        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#090d16] via-[#090d16]/75 to-transparent z-20" />
+      </div>
 
-      {/* Decorative Grid Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px] opacity-40 pointer-events-none" />
+      {/* Main Container */}
+      <div className="relative max-w-6xl mx-auto w-full flex-1 flex flex-col justify-between z-10">
+        {/* Top Row: Left Discipline Kicker & Right Availability Note */}
+        <div className="flex flex-wrap items-start justify-between gap-4 mb-4 sm:mb-6">
+          <div className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-blue-400 leading-snug">
+            <p>SEO Specialist</p>
+            <p className="text-blue-300/80">Web &amp; Technical SEO</p>
+          </div>
 
-      <div className="relative max-w-5xl mx-auto w-full flex flex-col items-center text-center">
-        {/* Availability Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill border border-cyan-400/20 text-cyan-300 text-xs sm:text-sm font-bold mb-6 shadow-sm shadow-cyan-500/10"
-        >
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-          </span>
-          <span>Junior SEO Specialist & Front-end Developer</span>
-        </motion.div>
+          <div className="text-left sm:text-right text-xs text-slate-400 leading-snug">
+            <p className="font-semibold text-slate-200">Sẵn sàng làm việc</p>
+            <p>Full-time &amp; Dự án SEO</p>
+          </div>
+        </div>
 
-        {/* Main Name & Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-4 leading-[1.15]"
-        >
-          Xin chào, tôi là{' '}
-          <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent underline decoration-cyan-400/30 decoration-wavy decoration-2">
-            Nguyễn Minh Luân
-          </span>
-        </motion.h1>
+        {/* Center Editorial Composition with Giant Cobalt "PORTFOLIO" Backdrop */}
+        <div className="relative flex-1 flex items-center py-4 lg:py-0">
+          {/* Giant Cobalt Display Wordmark Layer */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-1/2 -translate-y-[52%] flex justify-center items-center pointer-events-none select-none z-0 overflow-visible"
+          >
+            <span className="font-['Oswald'] font-bold uppercase text-[24vw] sm:text-[21vw] lg:text-[17.5rem] xl:text-[19.5rem] leading-[0.84] tracking-[-0.02em] bg-gradient-to-b from-[#2563eb] via-[#1d4ed8] to-[#1e3a8a]/25 bg-clip-text text-transparent whitespace-nowrap">
+              PORTFOLIO
+            </span>
+          </div>
 
-        {/* Catchy, Plump Tagline (Ít chữ, đơn giản) */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-2xl text-slate-300 font-semibold max-w-2xl mx-auto mb-6 leading-relaxed"
-        >
-          Tối ưu hóa công cụ tìm kiếm <span className="text-cyan-300 font-bold">(SEO)</span> & lập trình{' '}
-          <span className="text-indigo-300 font-bold">ReactJS / Web</span> tốc độ cao, chuẩn UX.
-        </motion.p>
+          {/* 3-Column Foreground Split */}
+          <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-4">
+            {/* Left Column: Cursive Intro + Massive Name + Role + CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              className="lg:col-span-5 flex flex-col items-start text-left pt-6 lg:pt-28 lg:self-end lg:pb-8"
+            >
+              <span className="font-['Dancing_Script'] font-bold text-3xl sm:text-4xl lg:text-[2.75rem] text-white -rotate-3 origin-left mb-1 drop-shadow-[0_4px_18px_rgba(5,8,17,0.95)]">
+                Xin chào, tôi là
+              </span>
 
-        {/* Special Skills Pill Tag */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="mb-8"
-        >
+              <h1 className="font-['Oswald'] font-bold uppercase text-5xl sm:text-7xl lg:text-[5.25rem] leading-[0.94] tracking-tight text-white drop-shadow-[0_8px_30px_rgba(5,8,17,0.95)]">
+                MINH LUÂN
+              </h1>
+
+              <div className="mt-5 text-base sm:text-lg font-extrabold uppercase tracking-wide text-blue-400 leading-tight drop-shadow-[0_2px_12px_rgba(5,8,17,0.9)]">
+                <p>SEO Specialist &amp;</p>
+                <p>Web Developer</p>
+              </div>
+
+              <p className="mt-3 text-sm text-slate-300 max-w-sm leading-relaxed font-medium drop-shadow-[0_2px_10px_rgba(5,8,17,0.95)]">
+                Từ nghiên cứu từ khóa đến kiến trúc kỹ thuật. Kết hợp Technical SEO, ReactJS và Linux để bứt phá traffic bền vững.
+              </p>
+
+              {/* Primary & Secondary Actions */}
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <a
+                  href="#projects"
+                  id="hero-view-projects-btn"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm rounded-sm shadow-lg shadow-blue-600/30 transition-colors whitespace-nowrap shrink-0"
+                >
+                  <span>Khám phá dự án</span>
+                  <ArrowDown className="w-4 h-4" />
+                </a>
+
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  id="hero-copy-email-btn"
+                  className="inline-flex items-center gap-2 px-4 py-3 bg-[#0a1020]/85 hover:bg-slate-800/90 border border-white/15 text-slate-200 font-semibold text-sm rounded-sm transition-colors whitespace-nowrap shrink-0"
+                >
+                  {copiedEmail ? (
+                    <>
+                      <Check className="w-4 h-4 text-emerald-400" />
+                      <span className="text-emerald-300">Đã sao chép Email</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4 text-blue-400" />
+                      <span>Sao chép Email</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Center Column: Cutout Portrait Overlapping "PORTFOLIO" */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.08 }}
+              className="lg:col-span-4 flex justify-center items-end relative self-end"
+            >
+              <div className="relative w-[320px] sm:w-[400px] lg:w-[480px] xl:w-[520px] lg:-mx-12 aspect-[4/5] flex items-end justify-center">
+                {/* Fallback backdrop if image is unavailable */}
+                <div className="absolute inset-x-10 bottom-6 top-12 rounded-t-full bg-gradient-to-b from-blue-600/15 to-transparent pointer-events-none" />
+                <img
+                  src="/assets/aistudio/c1dce8aabd583d066449-removebg-preview_531104d6.png"
+                  alt="Chân dung Nguyễn Minh Luân"
+                  referrerPolicy="no-referrer"
+                  className="relative z-10 w-full h-full object-contain object-bottom drop-shadow-[0_18px_45px_rgba(37,99,235,0.28)] [mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]"
+                />
+              </div>
+            </motion.div>
+
+            {/* Right Column: Vertical Cobalt Metrics Stack */}
+            <motion.div
+              initial={{ opacity: 0, x: 16 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.14 }}
+              className="lg:col-span-3 flex flex-row lg:flex-col flex-wrap justify-between lg:justify-end items-center lg:items-end gap-6 sm:gap-8 lg:gap-7 pt-4 lg:pt-28 lg:self-end lg:pb-10"
+            >
+              {heroStats.map((stat) => (
+                <div
+                  key={stat.value}
+                  className="flex items-center gap-3 lg:w-52 lg:justify-end"
+                >
+                  <span className="font-['Oswald'] font-bold text-4xl sm:text-5xl text-blue-500 tabular-nums leading-none tracking-tight drop-shadow-[0_4px_14px_rgba(37,99,235,0.25)]">
+                    {stat.value}
+                  </span>
+                  <div className="text-xs text-slate-300 font-medium leading-tight border-l border-white/15 pl-3 min-w-[78px]">
+                    <p>{stat.line1}</p>
+                    <p className="text-slate-400">{stat.line2}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom Subtle Scroll Anchor */}
+        <div className="relative z-30 flex items-center justify-between pt-4 border-t border-white/5 text-xs text-slate-400">
           <a
             href="#special-skills"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl glass-pill hover:border-emerald-400/50 text-emerald-300 hover:text-emerald-200 text-xs sm:text-sm font-bold transition-all shadow-md shadow-emerald-500/10 group"
+            className="hover:text-blue-400 transition-colors font-medium"
           >
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>Kỹ năng đặc biệt: Biết Code + Biết Linux</span>
-            <span className="text-emerald-400 group-hover:translate-x-0.5 transition-transform">→</span>
+            Kỹ năng đặc biệt: Code · Linux · Thay thế linh kiện Laptop
           </a>
-        </motion.div>
-
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-3.5 mb-12"
-        >
           <a
-            href="#projects"
-            id="hero-view-projects-btn"
-            className="flex items-center gap-2.5 px-6 py-3.5 rounded-2xl glass-button-primary text-slate-950 font-extrabold text-base transition-all group"
+            href="#about"
+            className="uppercase tracking-[0.18em] text-[11px] font-semibold text-slate-400 hover:text-white transition-colors whitespace-nowrap shrink-0"
           >
-            <Play className="w-4 h-4 fill-slate-950 group-hover:scale-110 transition-transform" />
-            <span>Xem Video Dự Án</span>
+            Cuộn xuống ↓
           </a>
-
-          <button
-            onClick={handleCopyEmail}
-            id="hero-copy-email-btn"
-            className="flex items-center gap-2 px-5 py-3.5 rounded-2xl glass-panel glass-panel-hover text-slate-200 font-bold text-base border border-white/15"
-          >
-            {copiedEmail ? (
-              <>
-                <Check className="w-4 h-4 text-emerald-400" />
-                <span className="text-emerald-300">Đã sao chép Email!</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-4 h-4 text-cyan-400" />
-                <span>Sao chép Email</span>
-              </>
-            )}
-          </button>
-        </motion.div>
-
-        {/* Quick Highlights / Mini Glass Bento Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full max-w-4xl"
-        >
-          <div className="p-4 rounded-3xl glass-panel border border-white/10 flex flex-col items-center justify-center text-center">
-            <span className="text-2xl sm:text-3xl font-black text-cyan-400">10.000+</span>
-            <span className="text-xs sm:text-sm font-semibold text-slate-300 mt-1">Từ khóa nghiên cứu</span>
-          </div>
-
-          <div className="p-4 rounded-3xl glass-panel border border-white/10 flex flex-col items-center justify-center text-center">
-            <span className="text-2xl sm:text-3xl font-black text-indigo-400">200+</span>
-            <span className="text-xs sm:text-sm font-semibold text-slate-300 mt-1">Topic Outline SEO</span>
-          </div>
-
-          <div className="p-4 rounded-3xl glass-panel border border-white/10 flex flex-col items-center justify-center text-center">
-            <span className="text-2xl sm:text-3xl font-black text-sky-400">ReactJS</span>
-            <span className="text-xs sm:text-sm font-semibold text-slate-300 mt-1">SPA & TailwindCSS</span>
-          </div>
-
-          <div className="p-4 rounded-3xl glass-panel border border-white/10 flex flex-col items-center justify-center text-center">
-            <span className="text-xl sm:text-2xl font-black text-emerald-400">Code & Linux</span>
-            <span className="text-xs sm:text-sm font-semibold text-slate-300 mt-1">Kỹ năng đặc biệt</span>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -63,7 +63,7 @@ export default function SpecialSkillsSection() {
               defaultTitle="Video Demo: Lập Trình Frontend (VS Code)"
               badge="Video Demo • Biết Code"
               badgeColor="cyan"
-              defaultVideoUrl="https://vimeo.com/1230106443?fl=tl&fe=ec"
+              defaultVideoUrl="https://vimeo.com/reviews/4f04643f-e250-4b42-9973-0a89c33427d2/videos/1230105890"
             />
           </motion.div>
 
@@ -93,10 +93,10 @@ export default function SpecialSkillsSection() {
             {/* Video Player */}
             <VideoPlayerCard
               storageKey="video_linux"
-              defaultTitle="Video Demo: Sniffing - Tấn công dò tìm dữ liệu"
+              defaultTitle="Video Demo: Quản Trị Hệ Thống & Terminal Linux"
               badge="Video Demo • Linux"
               badgeColor="emerald"
-              defaultVideoUrl="https://vimeo.com/1230105978?fl=tl&fe=ec"
+              defaultVideoUrl="https://vimeo.com/1230106443?fl=tl&fe=ec"
             />
           </motion.div>
 
@@ -129,7 +129,7 @@ export default function SpecialSkillsSection() {
               defaultTitle="Video Demo: Tháo Lắp & Thay Thế Linh Kiện Laptop"
               badge="Video Demo • Phần Cứng Laptop"
               badgeColor="amber"
-              defaultVideoUrl="https://vimeo.com/1230105890?fl=tl&fe=ec"
+              defaultVideoUrl="https://vimeo.com/1230106443?fl=tl&fe=ec"
             />
           </motion.div>
         </div>
